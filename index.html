@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./assets/logoAso.png" type="image/x-icon">
+
+    <!-- WPP BUTTON -->
+    <link rel="stylesheet"
+        href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+    <a id="robbu-whatsapp-button" class="left" target="_blank" href="https://api.whatsapp.com/send?phone=5521980870029">
+        <div class="rwb-tooltip">🚀 Estamos no WhatsApp</div>
+        <img alt="whatsapp-icon"
+            src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+    </a>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/17e295dfea.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE RECAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+
+    <title>ASO ONLINE</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navLogoContainer">
+                <a href="/">
+                    <img src="./assets/LogoAsoNav.png" alt="Logo ASO Online">
+                    <p>ASO ONLINE</p>
+                </a>
+            </div>
+            <!-- MENU MOBILE -->
+            <ul class="navItensContainerMobile">
+                <li>
+                    <button onclick="hideSidebar()" id="navCloseButton" aria-label="Fechar Menu">
+                        <img src="./assets/IMGS/closeIconHamburguerMenu.svg" alt="Icon Hamburguer Menu">
+                    </button>
+                </li>
+                <li>
+                    <a href="#homeID" class="showOnMobile">Sobre</a>
+                </li>
+                <li>
+                    <a href="#functionalitiesID" class="showOnMobile">Diferencial</a>
+                </li>
+                <li>
+                    <a href="#pricesID" class="showOnMobile">Planos</a>
+                </li>
+                <li>
+                    <a href="#formsContato" class="showOnMobile">Contato</a>
+                </li>
+                <li>
+                    <a href="https://asoonline.com.br/sistema/hub.asp" target="_blank" id="contactButtonMobile">Acesso a
+                        Plataforma</a>
+                </li>
+            </ul>
+            <!-- MENU DESKTOP -->
+            <ul class="navItensContainerDesktop">
+                <li>
+                    <a href="#homeID" class="showOnDesktop">Sobre</a>
+                </li>
+                <li>
+                    <a href="#functionalitiesID" class="showOnDesktop">Diferencial</a>
+                </li>
+                <li>
+                    <a href="#pricesID" class="showOnDesktop">Planos</a>
+                </li>
+                <li>
+                    <a href="#formsContato" class="showOnDesktop">Contato</a>
+                </li>
+                <li>
+                    <a href="https://asoonline.com.br/sistema/hub.asp" target="_blank" id="contactButton">Acesso a
+                        Plataforma</a>
+                </li>
+                <li class="menuCloseButtonMobile">
+                    <button onclick="showSidebar()" aria-label="Abrir Menu">
+                        <img src="./assets/IMGS/IconHamburguerMenu.svg" alt="Icon Hamburguer Menu">
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home" id="homeID">
+            <div class="homeText">
+                <h1 class="homeTitle">
+                    <strong>SEU ESCRITÓRIO ONLINE</strong> CONTROLE E AGENDE SEU EXAME EM TODO O BRASIL
+                </h1>
+                <p class="homeSubtitle">
+                    A solução completa e definitiva para a gestão global de SST!.
+                </p>
+                <p class="homeContentText">
+                    <strong>O ASO ONLINE</strong> é uma plataforma web responsiva (adapta-se a qualquer dispositivo com
+                    acesso à internet), operando de forma contínua e em tempo real. Ela foi criada para facilitar a
+                    produção, armazenamento e consulta de dados e documentos de Segurança do Trabalho, totalmente
+                    integrados à legislação do <strong>eSocial</strong>.
+                    <br><br>
+                    Nossa plataforma está em conformidade com todas as exigências de compliance brasileiro de SMS,
+                    permitindo atualizações ao longo do tempo, mas mantendo os registros armazenados para consultas
+                    futuras.
+                    <br><br>
+                    Acesse seu escritório online de qualquer lugar e a qualquer momento através de qualquer dispositivo
+                    conectado à internet. Tenha sempre em mãos todas as ferramentas necessárias para a gestão eficiente
+                    de SST!
+                </p>
+                <div class="homeButtons">
+                    <a href="http://agendatecnica.com.br/" target="_blank" id="homeButtonSistema">
+                        <i class="fa-solid fa-desktop"></i>
+                        <p><span>ACESSAR</span> <br> SISTEMA</p>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=5521980870029" target="_blank" id="homeButtonContato">
+                        <i class="fa-solid fa-phone"></i>
+                        <p><span>CONTATO</span> <br> COMERCIAL</p>
+                    </a>
+                </div>
+            </div>
+            <div class="homeImage">
+                <img src="./assets/homeImage.png" alt="Mockup da home da AGENDA TÉCNICA">
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="aboutText">
+                <h2>Por que as empresas têm obrigação de ter <strong>PGR e PCMSO?</strong></h2>
+                <p>As empresas sempre tiveram a obrigação de implementar o <strong>PGR (Programa de Prevenção de
+                        Riscos)</strong> e o <strong>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</strong>
+                    para garantir a segurança e a saúde dos trabalhadores, correndo o risco de multas e interdições caso
+                    não cumprissem essas normas. No entanto, a fiscalização do Ministério do Trabalho pode não alcançar
+                    todos os aspectos em todas as milhões de empresas brasileiras.
+                    Com o eSocial, a partir de janeiro de 2018, essa fiscalização se tornou mais rigorosa: além das
+                    informações tradicionais, os dados de Segurança do Trabalho provenientes do PGR e do PCMSO passaram
+                    a ser obrigatórios, com multas automáticas para o descumprimento.
+                    O ASO ONLINE resolve toda essa questão integrando-se inteiramente ao eSocial, garantindo que sua
+                    empresa esteja em conformidade com todas as exigências legais de forma prática e eficiente.
+                </p>
+            </div>
+            <div id="aboutCardContainer"></div>
+        </section>
+
+        <section class="functionalities" id="functionalitiesID">
+            <div class="functioTitle">
+                <h2>Funcionalidades e Diferenciais</h2>
+            </div>
+            <div id="functionalitiesSection"></div>
+        </section>
+
+        <section class="plataformaSection" id="pricesID">
+            <div class="plataformContent">
+                <h2>USO DA PLATAFORMA ASO ONLINE</h2>
+                <p>O ASO ONLINE se adapta as suas necessidades. Adquira já sua permissão de acesso a plataforma e comece
+                    a usufruir de sua tecnologia.</p>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Pacote de PGR e PCMSO Standard Tradicional
+                            </button>
+                        </h3>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>Valores a Consultar</p>
+                                <ul>
+                                    <li>Uso da plataforma por unidade de negócio/filial/estabelecimento</li>
+                                    <li>PGR (Programa de Gerenciamento de Riscos)</li>
+                                    <li>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</li>
+                                    <li>Consultoria de segurança e acidentes por meio eletrônico</li>
+                                    <li><del>Treinamento de CIPA (Comissão Interna de Prevenção de Acidentes)</del></li>
+                                    <li><del>Controle de ações</del></li>
+                                    <li><del>Relatório de situação de segurança</del></li>
+                                    <li><del>Laudo de aposentadoria especial</del></li>
+                                </ul>
+                                <p>Itens Inclusos</p>
+                                <ul>
+                                    <li>Responsabilidade Técnica dentro das exigências da NRs 7 e 9</li>
+                                    <li>Análise de ambiente "online"</li>
+                                    <li>Consultoria por chat e e-mail</li>
+                                    <li>Documentos em formato PDF</li>
+                                    <li><del>Disponibilidade de cursos "online" com emissão de certificado</del></li>
+                                    <li><del>01 login de acesso</del></li>
+                                    <li><del>Hospedagem de dados</del></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Pacote de PGR e PCMSO Plus
+                            </button>
+                        </h3>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>Valores a Consultar</p>
+                                <ul>
+                                    <li>Uso da plataforma por unidade de negócio/filial/estabelecimento</li>
+                                    <li>PGR (Programa de Gerenciamento de Riscos)</li>
+                                    <li>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</li>
+                                    <li>Consultoria de segurança e acidentes por meio eletrônico</li>
+                                    <li>Treinamento de CIPA (Comissão Interna de Prevenção de Acidentes)</li>
+                                    <li>Controle de ações</li>
+                                    <li>Relatório de situação de segurança</li>
+                                    <li><del>Laudo de aposentadoria especial</del></li>
+                                </ul>
+                                <p>Itens Inclusos</p>
+                                <ul>
+                                    <li>Responsabilidade Técnica dentro das exigências da NRs 7 e 9</li>
+                                    <li>Análise de ambiente "online"</li>
+                                    <li>Consultoria por chat e e-mail</li>
+                                    <li>Documentos em formato PDF</li>
+                                    <li>Disponibilidade de cursos "online" com emissão de certificado</li>
+                                    <li><del>01 login de acesso</del></li>
+                                    <li><del>Hospedagem de dados</del></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Pacote de PGR e PCMSO Premium
+                            </button>
+                        </h3>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>Valores a Consultar</p>
+                                <ul>
+                                    <li>Uso da plataforma por unidade de negócio/filial/estabelecimento</li>
+                                    <li>PGR (Programa de Gerenciamento de Riscos)</li>
+                                    <li>PCMSO (Programa de Controle Médico de Saúde Ocupacional)</li>
+                                    <li>Consultoria de segurança e acidentes por meio eletrônico</li>
+                                    <li>Treinamento de CIPA (Comissão Interna de Prevenção de Acidentes)</li>
+                                    <li>Controle de ações</li>
+                                    <li>Relatório de situação de segurança</li>
+                                    <li>Laudo de aposentadoria especial</li>
+                                </ul>
+                                <p>Itens Inclusos</p>
+                                <ul>
+                                    <li>Responsabilidade Técnica dentro das exigências da NRs 7 e 9</li>
+                                    <li>Análise de ambiente "online"</li>
+                                    <li>Consultoria por chat e e-mail</li>
+                                    <li>Documentos em formato PDF</li>
+                                    <li>Disponibilidade de cursos "online" com emissão de certificado</li>
+                                    <li>01 login de acesso</li>
+                                    <li>Hospedagem de dados</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="./assets/IMGS/mockup_why.png" alt="Mockup ilustrando o uso da plataforma ASO ONLINE">
+            </div>
+        </section>
+
+        <section id="formsContato">
+            <div class="formText">
+                <h2 class="formTextTilte">RESPONDEMOS SUAS PERGUNTAS
+                </h2>
+                <p class="formTextParagraph">Entre em contato conosco para quaisquer esclarecimentos.</p>
+            </div>
+            <div class="formContainer">
+                <form action="" method="POST">
+                    <div class="formField">
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" id="nome" name="nome" required placeholder="Informe seu nome"><br>
+                    </div>
+                    <div class="formField">
+
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required placeholder="Informe seu email"><br>
+                    </div>
+                    <div class="formField">
+
+                        <label for="assunto">Assunto:</label><br>
+                        <input type="text" id="assunto" name="assunto" required placeholder="Informe o assunto"><br>
+                    </div>
+
+                    <div class="formField">
+                        <label for="mensagem">Mensagem:</label><br>
+                        <textarea id="mensagem" name="mensagem" rows="4" required
+                            placeholder="Digite sua mensagem"></textarea><br>
+                    </div>
+
+                    <div class="buttonSubmitFormsDIV">
+
+                        <div id="recaptchaContainer" class="g-recaptcha"
+                            data-sitekey="6Lct3LwpAAAAAD28yaJAJP2vclCnfUHG1Rk4RLve" data-callback="handleRecaptcha">
+                        </div>
+                        <button id="submitButton" class="buttonSubmitForms disabled" disabled
+                            type="submit">Enviar</button>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content"><img src="./assets/LogoAsoNav.png" alt="Logo Agenda Tecnica">
+                <p>ASO ONLINE
+                    <br>CNPJ: 10.642.576/0001-06
+                </p>
+            </div>
+            <div class="footer-content1">
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552135491640">+55 (21) 3549-1640</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552120260011">+55 (21) 2026-0011</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552122629752">+55 (21) 2262-9752</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M460.6 147.3L353 256.9c-.8.8-.8 2 0 2.8l75.3 80.2c5.1 5.1 5.1 13.3 0 18.4-2.5 2.5-5.9 3.8-9.2 3.8s-6.7-1.3-9.2-3.8l-75-79.9c-.8-.8-2.1-.8-2.9 0L313.7 297c-15.3 15.5-35.6 24.1-57.4 24.2-22.1.1-43.1-9.2-58.6-24.9l-17.6-17.9c-.8-.8-2.1-.8-2.9 0l-75 79.9c-2.5 2.5-5.9 3.8-9.2 3.8s-6.7-1.3-9.2-3.8c-5.1-5.1-5.1-13.3 0-18.4l75.3-80.2c.7-.8.7-2 0-2.8L51.4 147.3c-1.3-1.3-3.4-.4-3.4 1.4V368c0 17.6 14.4 32 32 32h352c17.6 0 32-14.4 32-32V148.7c0-1.8-2.2-2.6-3.4-1.4z">
+                        </path>
+                        <path
+                            d="M256 295.1c14.8 0 28.7-5.8 39.1-16.4L452 119c-5.5-4.4-12.3-7-19.8-7H79.9c-7.5 0-14.4 2.6-19.8 7L217 278.7c10.3 10.5 24.2 16.4 39 16.4z">
+                        </path>
+                    </svg><a href="mailto:comercial@ammarhes.com.br">Comercial:<span class="span-footer">
+                            comercial@ammarhes.com.br</span></a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom-footer">
+            <div class="socialMedias"><a href="https://www.facebook.com/AgendatecnicaSST"
+                    aria-label="https://www.facebook.com/AgendatecnicaSST" target="_blank"><svg stroke="currentColor"
+                        fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
+                        </path>
+                    </svg></a><a href="https://www.linkedin.com/company/ammarhes-consultoria/"
+                    aria-label="https://www.linkedin.com/company/ammarhes-consultoria/" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                        </path>
+                    </svg></a><a href="https://www.instagram.com/ammarhesconsultoria/"
+                    aria-label="https://www.instagram.com/ammarhesconsultoria/" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                        </path>
+                    </svg></a></div>© 2024 Copyright:<p>ASO ONLINE: </p>
+        </div>
+    </footer>
+    <a href="#" id="topBtn" class="top"></a>
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
