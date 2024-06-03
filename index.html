@@ -285,28 +285,27 @@
                 <p class="formTextParagraph">Entre em contato conosco para quaisquer esclarecimentos.</p>
             </div>
             <div class="formContainer">
-                <form action="" method="POST">
+                <form id="contactForm">
                     <div class="formField">
-                        <label for="nome">Nome:</label><br>
+                        <label for="nome">Nome<span class="spanRequired">*</span> :</label><br>
                         <input type="text" id="nome" name="nome" required placeholder="Informe seu nome"><br>
                     </div>
                     <div class="formField">
 
-                        <label for="email">Email:</label><br>
+                        <label for="email">Email<span class="spanRequired">*</span> :</label><br>
                         <input type="email" id="email" name="email" required placeholder="Informe seu email"><br>
                     </div>
                     <div class="formField">
 
-                        <label for="assunto">Assunto:</label><br>
+                        <label for="assunto">Assunto<span class="spanRequired">*</span> :</label><br>
                         <input type="text" id="assunto" name="assunto" required placeholder="Informe o assunto"><br>
                     </div>
 
                     <div class="formField">
-                        <label for="mensagem">Mensagem:</label><br>
+                        <label for="mensagem">Mensagem<span class="spanRequired">*</span> :</label><br>
                         <textarea id="mensagem" name="mensagem" rows="4" required
                             placeholder="Digite sua mensagem"></textarea><br>
                     </div>
-
                     <div class="buttonSubmitFormsDIV">
 
                         <div id="recaptchaContainer" class="g-recaptcha"
@@ -314,9 +313,11 @@
                         </div>
                         <button id="submitButton" class="buttonSubmitForms disabled" disabled
                             type="submit">Enviar</button>
-
                     </div>
                 </form>
+                <div id="alertForm">
+                    <p id="alertMessage"></p>
+                </div>
             </div>
         </section>
     </main>

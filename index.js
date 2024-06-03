@@ -208,3 +208,74 @@ function handleRecaptcha() {
   button.disabled = false;
   button.classList.remove("disabled");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  let isCaptchaVerified = false;
+  let isSubmitting = false;
+
+  const contactForm = document.getElementById("contactForm");
+  const alertForm = document.getElementById("alertForm");
+  const alertMessage = document.getElementById("alertMessage");
+  const submitButton = document.getElementById("submitButton");
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (isCaptchaVerified || isSubmitting) {
+      return;
+    }
+
+    const formData = {
+      nameFrom: "Não Responder",
+      emailFrom: "naoresponder@ammarhes.com.br",
+      nameTo: contactForm.name.value,
+      emailTo: contactForm.email.value,
+      emailSubject: contactForm.assunto.value,
+      emailBody: contactForm.mensagem.value,
+    };
+
+    try {
+      const res = await fetch("URL", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alertForm.style.display = "block";
+        alert.classList.add("sucess");
+        alertForm.style.backgroundColor = "rgb(185, 248, 185)";
+        alertForm.style.color = "rgb(30, 70, 32)";
+        alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./assets/IMGS/check.svg"> Mensagem enviada com sucesso`;
+      } else {
+        alertForm.style.display = "block";
+        alertForm.style.backgroundColor = "rgb(239 66 66)";
+        alertForm.style.color = "rgb(255 255 255)";
+        alertForm.classList.add("error");
+        alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./assets/IMGS/exclamation-circle.svg"> Erro ao enviar o formulário!`;
+      }
+    } catch (error) {
+      alertForm.style.display = "block";
+      alertForm.style.backgroundColor = "rgb(239 66 66)";
+      alertForm.style.color = "rgb(255 255 255)";
+      alertForm.classList.add("error");
+      alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./assets/IMGS/exclamation-circle.svg"> Erro ao enviar o formulário!`;
+    } finally {
+      isSubmitting = false;
+      submitButton.disabled = false;
+      submitButton.innerHTML = "Enviar";
+    }
+  });
+
+  window.handleCaptchaVerify = () => {
+    isCaptchaVerified = true;
+    submitButton.disabled = false;
+  };
+
+  window.handleCaptchaExpire = () => {
+    isCaptchaVerified = false;
+    submitButton.disabled = true;
+  };
+});
