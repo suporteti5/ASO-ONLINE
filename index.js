@@ -242,30 +242,35 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         body: JSON.stringify(formData),
       });
-
       if (res.ok) {
         alertForm.style.display = "block";
         alert.classList.add("sucess");
         alertForm.style.backgroundColor = "rgb(185, 248, 185)";
         alertForm.style.color = "rgb(30, 70, 32)";
-        alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./assets/IMGS/check.svg"> Mensagem enviada com sucesso`;
+        alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./Assets/IMGS/check.svg"> Mensagem enviada com sucesso`;
+
+        submitButton.innerHTML = "Enviado";
+        submitButton.style.opacity = 0.7;
       } else {
         alertForm.style.display = "block";
+        alertForm.classList.add("error");
         alertForm.style.backgroundColor = "rgb(239 66 66)";
         alertForm.style.color = "rgb(255 255 255)";
-        alertForm.classList.add("error");
-        alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./assets/IMGS/exclamation-circle.svg"> Erro ao enviar o formulário!`;
+        alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./Assets/IMGS/exclamation-circle.svg"> Erro ao enviar o formulário!`;
+
+        submitButton.innerHTML = "Erro";
+        submitButton.style.opacity = 0.7;
       }
     } catch (error) {
       alertForm.style.display = "block";
       alertForm.style.backgroundColor = "rgb(239 66 66)";
       alertForm.style.color = "rgb(255 255 255)";
       alertForm.classList.add("error");
-      alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./assets/IMGS/exclamation-circle.svg"> Erro ao enviar o formulário!`;
-    } finally {
-      isSubmitting = false;
-      submitButton.disabled = false;
-      submitButton.innerHTML = "Enviar";
+
+      submitButton.innerHTML = "Erro";
+      submitButton.style.opacity = 0.7;
+
+      alertMessage.innerHTML = `<img id="alertMessageImage" alt="icon" src="./Assets/IMGS/exclamation-circle.svg"> Erro ao enviar o formulário!`;
     }
   });
 
@@ -279,3 +284,21 @@ document.addEventListener("DOMContentLoaded", () => {
     submitButton.disabled = true;
   };
 });
+
+function send() {
+  const submitButton = document.getElementById("submitButton");
+  const nameForm = document.getElementById("nome");
+  const emailForm = document.getElementById("email");
+  const assuntoForm = document.getElementById("assunto");
+  const messageForm = document.getElementById("mensagem");
+
+  if (
+    nameForm.value &&
+    emailForm.value &&
+    assuntoForm.value &&
+    messageForm.value !== ""
+  ) {
+    submitButton.innerHTML = "Enviando...";
+    submitButton.style.opacity = 0.7;
+  }
+}
